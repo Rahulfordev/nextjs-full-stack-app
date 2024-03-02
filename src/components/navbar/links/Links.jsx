@@ -53,7 +53,10 @@ const Links = () => {
         <Link href="/" className={style.logo}>
           Logo
         </Link>
-        <IoIosMenu className={style.icon} onClick={() => setIsShow(!isShow)} />
+        <IoIosMenu
+          className={style.icon}
+          onClick={() => setIsShow((prev) => !prev)}
+        />
       </div>
       {isShow && (
         <div className={style.responsiveLinks}>
