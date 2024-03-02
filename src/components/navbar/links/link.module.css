@@ -1,7 +1,25 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 23px;
+  }
 }
 
 .logout {
@@ -9,4 +27,35 @@
   color: var(--bg);
   padding: 8px 12px;
   border-radius: 5px;
+}
+
+.mobileLink,
+.responsiveLinks {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: none;
+  }
+
+  .responsiveLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0px, -75px);
+    gap: 1rem;
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
 }
