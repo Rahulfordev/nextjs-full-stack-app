@@ -1,5 +1,6 @@
 "use client";
 import { IoIosMenu } from "react-icons/io";
+import { IoCloseOutline } from "react-icons/io5";
 import style from "./link.module.css";
 import NavLink from "./navLink/NavLink";
 import { useState } from "react";
@@ -53,10 +54,17 @@ const Links = () => {
         <Link href="/" className={style.logo}>
           Logo
         </Link>
-        <IoIosMenu
-          className={style.icon}
-          onClick={() => setIsShow((prev) => !prev)}
-        />
+        {isShow ? (
+          <IoCloseOutline
+            className={style.icon}
+            onClick={() => setIsShow((prev) => !prev)}
+          />
+        ) : (
+          <IoIosMenu
+            className={style.icon}
+            onClick={() => setIsShow((prev) => !prev)}
+          />
+        )}
       </div>
       {isShow && (
         <div className={style.responsiveLinks}>
